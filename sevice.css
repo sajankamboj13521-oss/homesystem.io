@@ -1,0 +1,17 @@
+/* Service Specifics */
+.grid-2-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.grid-2-media.reverse { direction: rtl; }
+.grid-2-media.reverse .service-text { direction: ltr; }
+
+.sub-media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}

@@ -1,0 +1,14 @@
+/* About Specifics */
+.director-pic {
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 5px solid var(--light-bg);
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }

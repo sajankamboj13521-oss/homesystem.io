@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Acoustic & Interior Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- (Header) -->
+
+<main>
+    <h1>Our Collaborative Partners</h1>
+    <p>We work with industry leaders to ensure high-quality delivery.</p>
+
+    <div class="partner-spotlight fade-in">
+        <div class="media-container">
+            <video controls muted poster="image/meeting.jpg">
+                <source src="video/client discuss.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h3>Engaging with Clients</h3>
+        <p>Our partnership starts with understanding your needs through detailed discussions.</p>
+    </div>
+</main>
+
+<!-- (Footer) -->
+<script src="js/script.js"></script>
+</body>
+</html>
