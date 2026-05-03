@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Acoustic & Interior Solutions</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Chatbot UI Styles */
+        #ai-chat-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: Arial, sans-serif; }
+        #chat-button { background: #007bff; color: white; border: none; padding: 15px 20px; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: bold; }
+        #chat-window { display: none; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; border: 1px solid #ddd; }
+        #chat-header { background: #007bff; color: white; padding: 15px; text-align: center; font-weight: bold; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; font-size: 14px; background: #f9f9f9; }
+        .bot-msg { background: #e9e9e9; padding: 8px; border-radius: 8px; margin-bottom: 10px; display: inline-block; width: 90%; }
+        .user-options { display: flex; flex-direction: column; gap: 5px; }
+        .option-btn { background: #fff; border: 1px solid #007bff; color: #007bff; padding: 8px; border-radius: 5px; cursor: pointer; text-align: left; font-size: 13px; transition: 0.3s; }
+        .option-btn:hover { background: #007bff; color: white; }
+    </style>
 </head>
 <body>
 
@@ -22,11 +34,9 @@
 </header>
 
 <main>
-    <!-- Hero Section with Background Video -->
     <section class="hero-video media-container">
         <video autoplay loop muted playsinline poster="image/system.jpg">
             <source src="video/work.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
         <div class="hero-overlay">
             <h1>Precision in Every Design</h1>
@@ -35,7 +45,6 @@
         </div>
     </section>
 
-    <!-- Featured Projects/Process -->
     <section class="featured fade-in">
         <h2>Our Core Process</h2>
         <div class="grid-3">
@@ -56,20 +65,4 @@
             <div class="card">
                 <div class="media-container">
                     <video controls muted poster="image/ele.jpg">
-                        <source src="video/accurate.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Accurate Execution</h3>
-                <p>Bringing designs to life with unmatched precision.</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Acoustic & Interior Solutions. All rights reserved.</p>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
+                        <source src="video/accurate.mp4" type="video
