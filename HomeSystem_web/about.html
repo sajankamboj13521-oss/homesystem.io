@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | homesystems.io</title>
+    <style>
+        :root { --primary: #0078d7; --dark: #111; --glass: rgba(255, 255, 255, 0.94); }
+        
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            /* HVAC Technical Background */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #222; 
+            min-height: 100vh;
+        }
+        
+        header { 
+            background: rgba(0, 0, 0, 0.2); 
+            backdrop-filter: blur(15px);
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-box { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-text { font-size: 1.5rem; font-weight: bold; color: white; }
+        .orange-box { background: #ff8c00; color: white; padding: 2px 6px; border-radius: 4px; font-size: 1.2rem; }
+        
+        nav a { text-decoration: none; color: rgba(255,255,255,0.8); margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: #00d4ff; }
+
+        .container { 
+            max-width: 1400px; 
+            margin: 50px auto; 
+            padding: 0 40px; 
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Professional Glass Cards */
+        .glass-card {
+            background: var(--glass);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .director-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .director-img { 
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover; 
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid white;
+        }
+
+        .tagline { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; }
+        h1 { font-size: 2.8rem; color: var(--dark); margin: 10px 0; }
+        h2 { font-size: 1.8rem; color: var(--dark); margin-bottom: 20px; border-bottom: 3px solid #ff8c00; display: inline-block; padding-bottom: 5px; }
+
+        .details-grid { 
+            display: grid; 
+            grid-template-columns: 1.8fr 1fr; 
+            gap: 30px; 
+        }
+
+        .content-text { font-size: 1.1rem; color: #444; line-height: 1.8; }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+        .project-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        .project-list li::before { content: "✔"; color: #28a745; font-weight: bold; }
+
+        /* Floating AI Action Icon */
+        .ai-btn {
+            position: fixed; bottom: 40px; right: 40px; width: 75px; height: 75px;
+            background: var(--primary); border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 38px;
+            cursor: pointer; box-shadow: 0 15px 30px rgba(0,120,215,0.5);
+            text-decoration: none; transition: 0.4s;
+            z-index: 1001; border: 4px solid white;
+        }
+        .ai-btn:hover { transform: scale(1.15) rotate(10deg); background: #005a9e; }
+
+        @media (max-width: 1024px) {
+            .director-layout, .details-grid { grid-template-columns: 1fr; }
+            .director-img { width: 280px; margin: 0 auto; }
+            .container { padding: 20px; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-box">
+        <span class="logo-text">home systems<span class="orange-box">io</span></span>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="help.html">Support</a>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Director Profile Section -->
+    <div class="glass-card">
+        <div class="director-layout">
+            <img src="image/director.jpg" class="director-img" alt="Sajan Kumar">
+            <div class="director-info">
+                <p class="tagline">Director & Lead MEP Design Engineer</p>
+                <h1>Sajan Kumar</h1>
+                <p class="content-text">
+                    Sajan Kumar (Sajan Kamboj) is a visionary MEP Design Engineer with over four years of specialized experience in the building services industry. An expert in <strong>Revit, AutoCAD, and Navisworks</strong>, he has successfully spearheaded complex engineering designs for large-scale industrial projects, including the prestigious LG Sri City factory in Andhra Pradesh. His approach combines advanced BIM drafting with strategic site management to deliver efficient, sustainable, and high-performance building systems.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-grid">
+        <!-- Company Profile -->
+        <div class="glass-card">
+            <h2>About homesystems.io</h2>
+            <div class="content-text">
+                <p><strong>homesystems.io</strong> is a premier MEP (Mechanical, Electrical, and Plumbing) consultancy firm dedicated to transforming architectural visions into engineered reality. We specialize in providing comprehensive engineering solutions that prioritize safety, energy efficiency, and operational excellence.</p>
+                <p>By leveraging state-of-the-art <strong>Building Information Modeling (BIM)</strong> technology, we minimize construction risks and optimize project timelines. Our core expertise spans across HVAC design, fire protection systems, high-tension electrical layouts, and sophisticated plumbing networks.</p>
+                <p>At homesystems.io, we believe that the backbone of any great infrastructure is its MEP design. We are committed to setting new benchmarks in the engineering sector through innovation, precision, and a client-first approach.</p>
+            </div>
+        </div>
+
+        <!-- Project Highlights -->
+        <div class="glass-card">
+            <h2>Key Projects</h2>
+            <ul class="project-list">
+                <li>LG Sri City - MEP Planning & Drafting</li>
+                <li>Samsung Data Center - BIM Modeling</li>
+                <li>DLF Cyber City - HVAC Execution</li>
+                <li>Apollo Healthcare - Fire & Safety Design</li>
+                <li>GMR Infrastructure - Drainage Systems</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- AI Floating Assistant -->
+<a href="ai-support.html" class="ai-btn" title="Launch AI Support Desk">🤖</a>
+
+</body>
+</html>

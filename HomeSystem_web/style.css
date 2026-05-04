@@ -1,0 +1,205 @@
+/* --- 100x Modern CSS Root --- */
+:root {
+    --primary: #0062ff;       /* Electric Blue */
+    --accent: #ff8c00;        /* Engineering Orange */
+    --dark: #0f172a;          /* Deep Slate */
+    --light-bg: #f8fafc;      /* Clean Grayish Blue */
+    --glass: rgba(255, 255, 255, 0.85);
+    --shadow-main: 0 20px 50px rgba(0, 0, 0, 0.05);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; 
+    background: var(--light-bg); 
+    color: var(--dark); 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 1. Premium Glass Header --- */
+header { 
+    background: var(--glass); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.2rem 8%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 2000; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.03); 
+}
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    color: var(--dark); 
+    text-decoration: none; 
+    letter-spacing: -1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span { color: var(--accent); }
+
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav a { 
+    text-decoration: none; 
+    color: var(--dark); 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    transition: var(--transition);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+nav a:hover { color: var(--primary); }
+nav a:hover::after { width: 100%; }
+
+/* --- 2. Cinematic Hero Section --- */
+.hero { 
+    height: 80vh; 
+    position: relative; 
+    border-radius: 30px; 
+    overflow: hidden; 
+    margin: 20px 4%; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.hero video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: brightness(0.6);
+}
+
+.hero-text { 
+    position: absolute; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    color: white; 
+    text-align: center;
+    padding: 0 15%;
+}
+
+.hero-text h1 { 
+    font-size: clamp(2.5rem, 6vw, 5rem); 
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    font-weight: 300;
+}
+
+/* --- 3. 4D / Neumorphic Shadow Cards --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 8%;
+}
+
+.card { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 24px; 
+    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 20px 20px 60px #d1d9e6, -20px -20px 60px #ffffff; /* Neumorphism */
+    transition: var(--transition); 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card:hover { 
+    transform: translateY(-15px) scale(1.02); 
+    box-shadow: 0 40px 80px rgba(0,98,255,0.1); 
+    border-color: rgba(0,98,255,0.2);
+}
+
+.card h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* --- 4. Modern Button --- */
+.btn { 
+    background: var(--primary); 
+    color: white; 
+    padding: 14px 35px; 
+    text-decoration: none; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    display: inline-block;
+    width: fit-content;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(0,98,255,0.2);
+}
+
+.btn:hover { 
+    background: #004ecc;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,98,255,0.3);
+}
+
+/* --- 5. Footer Design --- */
+footer { 
+    background: var(--dark); 
+    color: rgba(255,255,255,0.6); 
+    text-align: center; 
+    padding: 4rem 2rem; 
+    margin-top: 5rem; 
+    border-top: 5px solid var(--accent);
+}
+
+footer p { font-size: 0.9rem; letter-spacing: 1px; }
+
+/* --- 6. 100x Animations --- */
+.fade-in { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); 
+    will-change: transform, opacity;
+}
+
+.fade-in.appear { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    header { padding: 1rem 5%; flex-direction: column; gap: 15px; }
+    nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero { height: 50vh; margin: 10px 2%; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .card-grid { padding: 40px 5%; }
+}

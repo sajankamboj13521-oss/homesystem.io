@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Systems | Digital MEP Leaders</title>
+    <style>
+        :root { 
+            --primary: #0056b3; 
+            --accent: #ff8c00; 
+            --bg-light: #f4f7f9;
+            --text-main: #2d3436;
+        }
+        
+        body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background: #fff; color: var(--text-main); line-height: 1.6; }
+
+        /* --- 1. Premium Navigation (Bigger Logo) --- */
+        header { 
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            padding: 15px 8%; display: flex; justify-content: space-between; 
+            align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 2000;
+        }
+        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 80px; width: auto; transition: 0.3s; }
+        .logo-text { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; letter-spacing: -1px; }
+        .brand-io { color: var(--accent); }
+
+        nav { display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: #444; font-size: 15px; font-weight: 600; position: relative; padding-bottom: 5px; }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: var(--accent); transition: 0.3s; }
+        nav a:hover::after { width: 100%; }
+
+        /* --- 2. Cinematic Hero Section --- */
+        .hero { position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; background: #000; color: white; overflow: hidden; }
+        #bg-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.45; }
+        .hero-box { position: relative; z-index: 10; text-align: center; max-width: 900px; padding: 0 20px; }
+        .hero-box h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; }
+        .hero-box p { font-size: 1.3rem; opacity: 0.9; font-weight: 300; }
+
+        /* --- 3. 100x Stats (Experience & Growth) --- */
+        .stats-section { padding: 60px 8%; background: var(--bg-light); border-bottom: 1px solid #e0e0e0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; text-align: center; }
+        .stat-card { padding: 20px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
+        .stat-card h3 { font-size: 2.8rem; color: var(--primary); margin: 0; font-weight: 800; }
+        .stat-card p { font-size: 0.85rem; color: #777; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+
+        /* --- 4. Services & Sectors (Visual Content) --- */
+        section { padding: 100px 8%; }
+        .section-header { margin-bottom: 50px; border-left: 8px solid var(--accent); padding-left: 25px; }
+        .section-header h2 { font-size: 2.5rem; margin: 0; color: #1a1a1a; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-item { background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #f0f0f0; transition: 0.4s; }
+        .service-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .service-item h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+
+        .sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .sector-box { position: relative; height: 280px; border-radius: 15px; overflow: hidden; cursor: pointer; }
+        .sector-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .sector-box:hover img { transform: scale(1.15); }
+        .sector-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; }
+
+        /* --- 5. Scope Grid (100x Cleanliness) --- */
+        .scope-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .scope-card { background: #f9f9f9; padding: 25px; text-align: center; font-weight: 600; border-radius: 12px; border: 1px solid #eee; transition: 0.3s; }
+        .scope-card:hover { background: var(--primary); color: white; }
+
+        /* --- 6. Detailed Descriptions (Infra & Safety) --- */
+        .detail-flex { display: flex; gap: 60px; align-items: center; margin-bottom: 80px; }
+        .detail-content { flex: 1; text-align: justify; font-size: 1.1rem; color: #555; }
+        .detail-media { flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+        .detail-media img { width: 100%; display: block; }
+
+        .safety-hero { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('image/outdoor.jpg') no-repeat center/cover;
+            padding: 120px 8%; border-radius: 30px; color: white; text-align: center;
+        }
+
+        /* --- AI Bot --- */
+        .ai-fab {
+            position: fixed; bottom: 40px; right: 40px; width: 75px; height: 75px;
+            background: var(--primary); border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; box-shadow: 0 15px 35px rgba(0,86,179,0.4);
+            cursor: pointer; transition: 0.3s; text-decoration: none; z-index: 3000;
+        }
+        .ai-fab:hover { transform: scale(1.1) rotate(10deg); }
+
+        @media (max-width: 992px) { .detail-flex { flex-direction: column; } .hero-box h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-container">
+        <img src="image/Logo.jpg" alt="HomeSystems" class="logo-img">
+        <span class="logo-text">home systems<span class="brand-io">.io</span></span>
+    </a>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="patner.html">Partner</a>
+        <a href="help.html">Help</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="videos/cleanroom.mp4" type="video/mp4">
+    </video>
+    <div class="hero-box">
+        <h1>Digitizing MEP Excellence</h1>
+        <p>Transforming complex engineering into transparent digital workflows. Experience real-time precision with Home Systems.</p>
+    </div>
+</section>
+
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-card"><h3>5+</h3><p>Years Experience</p></div>
+        <div class="stat-card"><h3>100K</h3><p>Sq.Ft Built</p></div>
+        <div class="stat-card"><h3>5+</h3><p>Major Projects</p></div>
+        <div class="stat-card"><h3>100+</h3><p>Direct Labour</p></div>
+        <div class="stat-card"><h3>50+</h3><p>Vendors</p></div>
+    </div>
+</div>
+
+<section id="infra" class="detail-flex">
+    <div class="detail-content">
+        <div class="section-header"><h2>Our Infrastructure</h2></div>
+        <p>Home Systems boasts a robust technical infrastructure designed for high-precision MEP execution. Our facilities are equipped with industry-leading fabrication machinery and advanced testing kits, ensuring that every component meets international quality standards. We leverage a fully integrated digital ecosystem where BIM (Building Information Modeling) and real-time project management software drive our operations. This allows us to minimize site errors, optimize material usage, and maintain a seamless flow of information between the design studio and the construction site. Our 100+ strong in-house workforce is supported by specialized equipment for HVAC ducting, electrical panel assembly, and plumbing pressure testing. By centralizing our logistics and fabrication, we ensure that every project—regardless of size—benefits from a controlled, high-standard environment that traditional MEP firms struggle to match. Our commitment to infrastructure is a commitment to your project's longevity and performance.</p>
+    </div>
+    <div class="detail-media">
+        <img src="image/hvac.jpg" alt="Infrastructure">
+    </div>
+</section>
+
+<section id="services">
+    <div class="section-header"><h2>Core Services</h2></div>
+    <div class="service-grid">
+        <div class="service-item"><h3>🔹 Mechanical</h3><p>HVAC (VRF & Chilled Water), PHE Systems, and specialized Spot Cooling for industrial setups.</p></div>
+        <div class="service-item"><h3>⚡ Electrical</h3><p>End-to-end power cabling, main LT/HT panel supply, terminations, and comprehensive site installations.</p></div>
+        <div class="service-item"><h3>💧 Plumbing & Fire</h3><p>Integrated STP/ETP systems, sanitary works, and automated fire suppression with addressable alarm systems.</p></div>
+    </div>
+</section>
+
+<section id="sectors">
+    <div class="section-header"><h2>Sectors We Serve</h2></div>
+    <div class="sector-grid">
+        <div class="sector-box"><img src="image/hvac2.jpg" alt="Industrial"><div class="sector-info"><h3>Industrial</h3></div></div>
+        <div class="sector-box"><img src="image/duct1.jpg" alt="Electronics"><div class="sector-info"><h3>Electronics</h3></div></div>
+        <div class="sector-box"><img src="image/hvac.jpg" alt="Automobile"><div class="sector-info"><h3>Automobile</h3></div></div>
+        <div class="sector-box"><img src="image/outdoor.jpg" alt="Hospitality"><div class="sector-info"><h3>Hospitality</h3></div></div>
+    </div>
+</section>
+
+<section id="scope">
+    <div class="section-header"><h2>Scope of Services</h2></div>
+    <div class="scope-container">
+        <div class="scope-card">System Design</div>
+        <div class="scope-card">BIM Modelling</div>
+        <div class="scope-card">BOQ Calculation</div>
+        <div class="scope-card">Project Schedules</div>
+        <div class="scope-card">Site Execution</div>
+        <div class="scope-card">Procurement</div>
+        <div class="scope-card">Quality Audits</div>
+        <div class="scope-card">Safety Management</div>
+        <div class="scope-card">Cost Control</div>
+        <div class="scope-card">Commissioning</div>
+    </div>
+</section>
+
+<section>
+    <div class="safety-hero">
+        <div class="section-header" style="border-left-color: white;"><h2 style="color: white;">Safety & Compliance</h2></div>
+        <p style="max-width: 900px; margin: 0 auto; line-height: 2;">Safety at Home Systems is a non-negotiable core value. Our 'Safety First' culture is backed by rigorous 100% compliance with ESI, EPF, and GST regulations, ensuring a secure professional environment for our 100+ team members. We implement a multi-layered safety protocol that includes daily hazard identification, mandatory certified PPE for all site personnel, and regular emergency response drills. Every project begins with a comprehensive 'Safe by Design' audit to eliminate risks at the blueprint stage. Our commitment extends to environmental safety, ensuring that all MEP installations follow green building standards. By maintaining a zero-accident record and focusing on proactive risk mitigation, we protect not just our workforce, but the investments and reputations of our clients. Compliance isn't just a legal checkmark for us; it's the foundation of the trust our partners place in Home Systems for their mission-critical infrastructures.</p>
+    </div>
+</section>
+
+<a href="ai-support.html" class="ai-fab">
+    <span style="color:white; font-size: 35px;">🤖</span>
+</a>
+
+<script>
+    // 100x Smooth Observer Script
+    document.addEventListener('DOMContentLoaded', () => {
+        const obsOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, obsOptions);
+
+        const targets = document.querySelectorAll('.service-item, .stat-card, .sector-box, .scope-card, .detail-media');
+        targets.forEach(t => {
+            t.style.opacity = "0";
+            t.style.transform = "translateY(40px)";
+            t.style.transition = "all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)";
+            observer.observe(t);
+        });
+    });
+</script>
+
+</body>
+</html>
