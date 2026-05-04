@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ye line zoom ko sakti se rokegi -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects | homesystems.io</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { background: #f4f4f4; margin: 0; font-family: sans-serif; overflow-x: hidden; }
+        
+        /* Header - Fixed & Professional */
+        header { 
+            background: #fff; padding: 10px 5%; 
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Video Section - Screen ke hisab se size lega */
+        .video-main-container {
+            width: 95%; max-width: 1000px; margin: 20px auto;
+            background: #000; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        video { width: 100%; display: block; aspect-ratio: 16 / 9; }
+
+        /* Clips Row - Sab kuch ik side mein */
+        .clips-row {
+            display: flex; gap: 15px; width: 95%; max-width: 1000px;
+            margin: 20px auto; justify-content: space-between;
+        }
+
+        .clip-item {
+            flex: 1; /* Teeno ko equal size dega */
+            background: #fff; border-radius: 8px; overflow: hidden;
+            cursor: pointer; border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+
+        .clip-item:hover { transform: translateY(-3px); border-color: #0078d7; }
+
+        .thumb {
+            height: 100px; background: #333; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: bold; text-align: center; padding: 5px;
+        }
+
+        .clip-text { padding: 10px; font-size: 13px; font-weight: 600; color: #333; }
+
+        /* Dropdown Style */
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none; position: absolute; background: #fff;
+            right: 0; min-width: 150px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px; z-index: 10;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #333; padding: 10px; text-decoration: none; display: block; border-bottom: 1px solid #eee; }
+
+        /* Mobile Fix: Agar screen bahut choti ho toh bhi zoom ki jaroorat nahi padegi */
+        @media (max-width: 600px) {
+            .clips-row { flex-direction: column; } /* Mobile pe ek ke niche ek aa jayenge automatically */
+            .thumb { height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo" style="text-decoration:none; color:#000; font-weight:bold;">homesystems.io</a>
+    <nav style="display:flex; gap:15px; align-items:center;">
+        <a href="index.html" style="text-decoration:none; color:#333;">Home</a>
+        <div class="dropdown">
+            <span style="cursor:pointer; font-weight:bold;">Other ▼</span>
+            <div class="dropdown-content">
+                <a href="help.html">Help Desk</a>
+                <a href="projects.html">Projects</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="video-main-container">
+    <video id="mainVideo" controls playsinline>
+        <source src="videos/highside.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="clips-row">
+    <!-- Clip 1 -->
+    <div class="clip-item" onclick="playVid('videos/highside.mp4')">
+        <div class="thumb" style="background:linear-gradient(to bottom, #444, #111);">HIGH SIDE HVAC</div>
+        <div class="clip-text">HVAC Execution</div>
+    </div>
+
+    <!-- Clip 2 -->
+    <div class="clip-item" onclick="playVid('videos/fire.mp4')">
+        <div class="thumb" style="background:linear-gradient(to bottom, #800, #300);">FIRE SAFETY</div>
+        <div class="clip-text">Safety Systems</div>
+    </div>
+
+    <!-- Clip 3 -->
+    <div class="clip-item" onclick="playVid('videos/plumbing.mp4')">
+        <div class="thumb" style="background:linear-gradient(to bottom, #044, #011);">PLUMBING</div>
+        <div class="clip-text">Drainage Design</div>
+    </div>
+</div>
+
+<script>
+    function playVid(source) {
+        var v = document.getElementById('mainVideo');
+        v.src = source;
+        v.play();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
