@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Systems | Digital MEP Leaders</title>
     <style>
+/* =================================INKO LAST MEIN PASTE KAREIN================================= */
+
+/* Ye code sirf 768px se choti screens (Mobile/Tablets) par chalega */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Page ko side mein hilne se rokne ke liye */
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; 
+    }
+
+    /* 2. Aapke 4D Cards ya Boxes ka size mobile ke liye */
+    /* Agar aapne class ka naam 'card' rakha hai toh ye use karein */
+    .card, .box, .container {
+        width: 90% !important; /* Fixed width (jaise 400px) ko mobile par failne se rokega */
+        max-width: none !important;
+        margin: 20px auto !important; /* Card ko center mein rakhega */
+        float: none !important; /* Mobile par float kaam nahi karta sahi se */
+    }
+
+    /* 3. Animations ko mobile par thoda slow ya simple karne ke liye (Battery saving) */
+    * {
+        animation-delay: 0s !important;
+    }
+
+    /* 4. Text ka size jo mobile par bahut bada dikhta hai */
+    h1 {
+        font-size: 24px !important;
+    }
+    p {
+        font-size: 16px !important;
+    }
+
+    /* 5. Agar aapne images use ki hain toh wo screen se bahar na jayein */
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
         :root { 
             --primary: #0056b3; 
             --accent: #ff8c00; 
