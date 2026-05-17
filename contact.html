@@ -3,111 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Home Systems for MEP consulting, HVAC design, BIM coordination, careers, and partnerships.">
     <title>Contact Us | homesystems.io</title>
-    <style>
-        :root { --primary: #0078d7; --dark: #111; --glass: rgba(255, 255, 255, 0.96); }
-        
-        body { 
-            margin: 0; 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                        url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        header { 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(15px);
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo-box { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .logo-text { font-size: 1.5rem; font-weight: bold; color: white; }
-        .orange-box { background: #ff8c00; color: white; padding: 2px 6px; border-radius: 4px; font-size: 1.2rem; }
-        
-        nav a { text-decoration: none; color: rgba(255,255,255,0.9); margin-left: 25px; font-weight: 500; }
-
-        .container { 
-            max-width: 1200px; 
-            margin: auto; 
-            padding: 60px 20px; 
-            display: grid; 
-            grid-template-columns: 1fr 1.5fr; 
-            gap: 40px; 
-        }
-
-        .glass-card {
-            background: var(--glass);
-            padding: 45px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Success Message Overlay */
-        #successOverlay {
-            display: none;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: white;
-            z-index: 10;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .tick-icon {
-            font-size: 80px;
-            color: #28a745;
-            margin-bottom: 20px;
-            animation: scaleUp 0.5s ease;
-        }
-
-        @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
-
-        .info-sidebar { background: #1a1a1a; color: white; border: none; }
-        .info-sidebar h2 { color: #ff8c00; margin: 0 0 40px 0; }
-        
-        .contact-form { display: flex; flex-direction: column; gap: 15px; }
-        .contact-form input, .contact-form select, .contact-form textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .submit-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .submit-btn:hover { background: #005a9e; }
-
-        .ai-float {
-            position: fixed; bottom: 40px; right: 40px; width: 70px; height: 70px;
-            background: var(--primary); border-radius: 50%; display: flex;
-            justify-content: center; align-items: center; font-size: 35px;
-            text-decoration: none; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } }
-    </style>
+    <link rel="stylesheet" href="css/contact.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init(EMAILJS_CORPORATE.publicKey);
+    })();
+    </script>
 </head>
 <body>
 
@@ -115,83 +20,82 @@
     <a href="index.html" class="logo-box">
         <span class="logo-text">home systems<span class="orange-box">io</span></span>
     </a>
-    <nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="help.html">Support</a>
+        <a href="ai-support.html" class="nav-ai">AI Support</a>
+        <a href="help.html">Help</a>
     </nav>
 </header>
 
 <div class="container">
-    <div class="glass-card info-sidebar">
+    <aside class="glass-card info-sidebar">
         <h2>Contact Us</h2>
-        <p><strong>Head Office:</strong> New Delhi, India</p>
+        <p><strong>Head Office:</strong> Lado Sarai, New Delhi — 110030</p>
         <p><strong>Regional Office:</strong> Fatehabad, Haryana</p>
         <p><strong>Email:</strong> sajankamboj13521@gmail.com</p>
-        
-        <div style="margin-top: 40px; display: flex; align-items: center; gap: 15px;">
-            <img src="image/director.jpg" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #ff8c00;" alt="Sajan">
-            <div><strong>Sajan Kumar</strong><br><small>Director & MEP Engineer</small></div>
+        <p><strong>Phone:</strong> <a href="tel:+919467584013">+91 9467584013</a></p>
+        <div class="director-row">
+            <img src="image/director.jpg" alt="Sajan Kumar" width="70" height="70">
+            <div>
+                <strong>Sajan Kumar</strong><br>
+                <small>MEP Draughtsman · HVAC Design · BIM Modeler</small>
+            </div>
         </div>
-    </div>
+    </aside>
 
-    <!-- Form Section -->
     <div class="glass-card" id="formContainer">
-        <!-- Success Overlay -->
-        <div id="successOverlay">
-            <div class="tick-icon">✔</div>
-            <h2 style="color: #333;">Message Sent!</h2>
-            <p style="color: #666;">Thank you. Sajan will contact you shortly.</p>
-        </div>
+        <form id="corporateContactForm" class="contact-form">
+            <h3>Submit Inquiry</h3>
+            <p class="form-hint">Your message is transmitted securely in the background to our team.</p>
 
-        <h3 style="margin-top: 0;">Submit Inquiry</h3>
-        <form id="contactForm" class="contact-form">
-            <input type="text" name="name" id="name" placeholder="Full Name" required>
-            <input type="email" name="email" id="email" placeholder="Email Address" required>
-            <select name="type" id="type">
-                <option>New Project Consulting</option>
-                <option>BIM & Drafting Services</option>
-                <option>Career Opportunities</option>
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name" placeholder="Your full name" required autocomplete="name">
+
+            <label for="phone">Mobile number</label>
+            <input type="tel" name="phone" id="phone" placeholder="10-digit mobile" required autocomplete="tel">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="you@gmail.com" required autocomplete="email">
+
+            <label for="type">I am contacting as</label>
+            <select name="type" id="type" required>
+                <option value="Client / Customer">Client / Customer — New project</option>
+                <option value="Job Seeker / Worker">Job Seeker / Worker</option>
+                <option value="Vendor / Partner">Vendor / Partner</option>
+                <option value="General Inquiry">General inquiry</option>
             </select>
-            <textarea name="message" id="message" placeholder="How can we help you?" rows="5" required></textarea>
-            
-            <button type="submit" class="submit-btn">Send Secure Message</button>
+
+            <label for="message">Your message</label>
+            <textarea name="message" id="message" placeholder="Project scope, budget, timeline, skills, or partnership details…" rows="5" required></textarea>
+
+            <button type="submit" class="submit-btn" id="submitFormBtn">Submit Details</button>
+            <div id="submissionStatusDisplay" style="margin-top: 15px; padding: 12px; font-weight: bold; border-radius: 4px; display: none; text-align: center; font-family: sans-serif;"></div>
         </form>
     </div>
 </div>
 
-<a href="ai-support.html" class="ai-float">🤖</a>
+<a href="ai-support.html" class="ai-float" title="AI Support Desk" aria-label="AI Support">🤖</a>
 
 <script>
-    const contactForm = document.getElementById('contactForm');
-    const successOverlay = document.getElementById('successOverlay');
-
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Form details ko collect karna
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            type: document.getElementById('type').value,
-            message: document.getElementById('message').value
-        };
-
-        // Note: Real email ke liye aap 'formspree.io' ka endpoint use kar sakte hain.
-        // Filhaal hum "Automatic Success" UI dikha rahe hain.
-        
-        console.log("Form Data Sent to Sajan:", formData);
-
-        // Chat off karna aur tick dikhana
-        successOverlay.style.display = 'flex';
-        
-        // Optional: 3 second baad page reload ya home par redirect
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 3000);
-    });
+    (function () {
+        const toggle = document.getElementById('nav-toggle');
+        const nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.querySelectorAll('a').forEach((a) => {
+            a.addEventListener('click', () => {
+                nav.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
 </script>
-
+<script type="text/javascript" src="js/corporate-emailjs.js"></script>
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Partner with Home Systems — material supply and joint venture MEP collaboration.">
+    <title>Partner &amp; Legal | homesystems.io</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init(EMAILJS_CORPORATE.publicKey);
+    })();
+    </script>
+</head>
+<body class="form-page form-page--light">
+
+<header class="form-header">
+    <a href="index.html" class="form-logo">home systems<span>.io</span></a>
+    <nav class="form-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="ai-support.html">AI Support</a>
+    </nav>
+</header>
+
+<main class="form-main">
+    <section style="text-align: center; max-width: 720px; margin: 0 auto 32px;">
+        <h1 style="margin: 0 0 8px; font-size: clamp(1.5rem, 4vw, 2rem);">Business Collaboration</h1>
+        <p style="margin: 0; color: #555;">Connect with Home Systems for MEP material supply and joint-venture partnerships.</p>
+    </section>
+
+    <div class="partner-grid">
+        <article class="partner-card">
+            <h3>Material Supply</h3>
+            <p>For HVAC, electrical, and acoustic material vendors.</p>
+            <form id="corporateContactForm" class="lead-form">
+                <label for="material-name">Full name</label>
+                <input type="text" id="material-name" name="name" required autocomplete="name">
+                <label for="material-phone">Mobile</label>
+                <input type="tel" id="material-phone" name="phone" required autocomplete="tel">
+                <label for="material-email">Email</label>
+                <input type="email" id="material-email" name="email" required autocomplete="email">
+                <label for="material-message">Company &amp; proposal</label>
+                <textarea id="material-message" name="message" rows="4" required placeholder="Company profile, products, certifications…"></textarea>
+                <input type="hidden" name="type" value="Material Supply">
+                <button type="submit" class="btn-submit" id="submitFormBtn">Submit Details</button>
+                <div id="submissionStatusDisplay" style="margin-top: 15px; padding: 12px; font-weight: bold; border-radius: 4px; display: none; text-align: center; font-family: sans-serif;"></div>
+            </form>
+        </article>
+
+        <article class="partner-card">
+            <h3>Joint Ventures</h3>
+            <p>Project-based collaboration for MEP design and execution.</p>
+            <form id="corporateContactFormJv" class="lead-form">
+                <label for="jv-name">Full name</label>
+                <input type="text" id="jv-name" name="name" required autocomplete="name">
+                <label for="jv-phone">Mobile</label>
+                <input type="tel" id="jv-phone" name="phone" required autocomplete="tel">
+                <label for="jv-email">Email</label>
+                <input type="email" id="jv-email" name="email" required autocomplete="email">
+                <label for="jv-message">Partnership scope</label>
+                <textarea id="jv-message" name="message" rows="4" required placeholder="Project type, region, capabilities…"></textarea>
+                <input type="hidden" name="type" value="Joint Venture">
+                <button type="submit" class="btn-submit" id="submitFormBtn">Submit Details</button>
+                <div id="submissionStatusDisplay" style="margin-top: 15px; padding: 12px; font-weight: bold; border-radius: 4px; display: none; text-align: center; font-family: sans-serif;"></div>
+            </form>
+        </article>
+    </div>
+
+    <div class="legal-block">
+        <h2>Legal Notice: Key Terms &amp; Conditions</h2>
+        <div class="legal-grid">
+            <div>1. MEP designs are proprietary assets of Home Systems.</div>
+            <div>2. Unauthorized reproduction of models is prohibited.</div>
+            <div>3. Collaboration requires signed NDA where applicable.</div>
+            <div>4. Payment per agreed Purchase Order only.</div>
+            <div>5. Site safety compliance is the partner's responsibility.</div>
+            <div>6. Final design authority rests with Home Systems.</div>
+        </div>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 24px; color: #777; font-size: 0.85rem;">
+    © 2026 Home Systems · Lado Sarai, New Delhi — 110030
+</footer>
+
+<a href="ai-support.html" class="ai-fab" title="AI Support" aria-label="AI Support">🤖</a>
+
+<script type="text/javascript" src="js/corporate-emailjs.js"></script>
+</body>
+</html>

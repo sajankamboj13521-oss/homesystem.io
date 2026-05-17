@@ -3,170 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home Systems technical help desk — MEP design and BIM support requests.">
     <title>Help Desk | homesystems.io</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            /* MEP aur Engineering related background image */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: white;
-        }
-
-        header {
-            padding: 1.5rem 5%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: #00d4ff;
-            text-decoration: none;
-        }
-
-        .help-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .help-card {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            max-width: 600px;
-            width: 100%;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-
-        .help-card h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-
-        .help-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .email-box {
-            background: #f0f7ff;
-            padding: 20px;
-            border-radius: 12px;
-            border: 2px dashed #0078d7;
-            margin: 30px 0;
-            transition: 0.3s;
-        }
-
-        .email-box:hover {
-            background: #e1f0ff;
-        }
-
-        .email-box a {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #0078d7;
-            text-decoration: none;
-        }
-
-        /* Floating AI Emoji Button */
-        .ai-float-btn {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 70px;
-            height: 70px;
-            background: #0078d7;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 120, 215, 0.5);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            border: 4px solid white;
-        }
-
-        .ai-float-btn:hover {
-            transform: scale(1.1) rotate(10deg);
-            background: #005a9e;
-        }
-
-        .ai-tooltip {
-            position: fixed;
-            bottom: 55px;
-            right: 120px;
-            background: #1a1a1a;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            opacity: 0;
-            transition: 0.3s;
-            pointer-events: none;
-        }
-
-        .ai-float-btn:hover + .ai-tooltip {
-            opacity: 1;
-        }
-
-        .back-link {
-            color: #888;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .back-link:hover { color: #333; }
-    </style>
+    <link rel="stylesheet" href="css/forms.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init(EMAILJS_CORPORATE.publicKey);
+    })();
+    </script>
 </head>
-<body>
+<body class="form-page form-page--dark">
 
-    <header>
-        <a href="index.html" class="logo">homesystems.io</a>
-    </header>
+<header class="form-header">
+    <a href="index.html" class="form-logo">home systems<span>.io</span></a>
+    <nav class="form-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="ai-support.html">AI Support</a>
+    </nav>
+</header>
 
-    <div class="help-container">
-        <div class="help-card">
-            <h1>Help Desk</h1>
-            <p>Need technical assistance with MEP Design or BIM Drafting? Our support team is available for professional consultation.</p>
-            
-            <div class="email-box">
-                <p style="margin: 0 0 10px 0; font-weight: bold; color: #1a1a1a;">Official Support Email</p>
-                <a href="mailto:sajankamboj13521@gmail.com">sajankamboj13521@gmail.com</a>
-            </div>
-            
-            <a href="projects.html" class="back-link">← Back to Projects</a>
-        </div>
+<main class="form-main">
+    <div class="form-card">
+        <h1>Help Desk</h1>
+        <p class="intro">Submit a technical support request for MEP design, BIM drafting, or project coordination.</p>
+
+        <form id="corporateContactForm" class="lead-form">
+            <label for="help-name">Full name</label>
+            <input type="text" id="help-name" name="name" required autocomplete="name">
+
+            <label for="help-phone">Mobile number</label>
+            <input type="tel" id="help-phone" name="phone" required autocomplete="tel" placeholder="10-digit mobile">
+
+            <label for="help-email">Email</label>
+            <input type="email" id="help-email" name="email" required autocomplete="email">
+
+            <label for="help-topic">Topic</label>
+            <select id="help-topic" name="type" required>
+                <option value="MEP Design Support">MEP Design Support</option>
+                <option value="BIM / Revit Issue">BIM / Revit Issue</option>
+                <option value="Shop Drawing Query">Shop Drawing Query</option>
+                <option value="Site / Execution">Site / Execution</option>
+                <option value="Other Technical">Other Technical</option>
+            </select>
+
+            <label for="help-message">Describe your issue</label>
+            <textarea id="help-message" name="message" rows="5" required placeholder="Project name, drawing reference, error details…"></textarea>
+
+            <button type="submit" class="btn-submit" id="submitFormBtn">Submit Details</button>
+            <div id="submissionStatusDisplay" style="margin-top: 15px; padding: 12px; font-weight: bold; border-radius: 4px; display: none; text-align: center; font-family: sans-serif;"></div>
+        </form>
+
+        <p class="intro" style="margin-top: 20px; margin-bottom: 0; font-size: 0.85rem;">
+            Official inbox: sajankamboj13521@gmail.com · +91 9467584013
+        </p>
     </div>
+</main>
 
-    <!-- AI Support Floating Option -->
-    <a href="ai-support.html" class="ai-float-btn">
-        🤖
-    </a>
-    <div class="ai-tooltip">AI Support Desk Active</div>
+<a href="ai-support.html" class="ai-fab" title="AI Support" aria-label="AI Support">🤖</a>
 
+<script type="text/javascript" src="js/corporate-emailjs.js"></script>
 </body>
 </html>

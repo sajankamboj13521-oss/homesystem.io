@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | homesystems.io</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init(EMAILJS_CORPORATE.publicKey);
+    })();
+    </script>
     <style>
         :root { --primary: #0078d7; --dark: #111; --glass: rgba(255, 255, 255, 0.94); }
         
@@ -108,6 +115,17 @@
         }
         .ai-btn:hover { transform: scale(1.15) rotate(10deg); background: #005a9e; }
 
+        .inquiry-form label { display: block; font-weight: 600; margin: 12px 0 6px; font-size: 0.9rem; }
+        .inquiry-form input, .inquiry-form textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-size: 1rem; font-family: inherit; box-sizing: border-box;
+        }
+        .inquiry-form button {
+            margin-top: 16px; background: var(--primary); color: #fff; border: none;
+            padding: 14px 28px; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%;
+        }
+        .inquiry-form button:disabled { opacity: 0.6; }
+
         @media (max-width: 1024px) {
             .director-layout, .details-grid { grid-template-columns: 1fr; }
             .director-img { width: 280px; margin: 0 auto; }
@@ -168,10 +186,27 @@
             </ul>
         </div>
     </div>
+
+    <div class="glass-card">
+        <h2>Request a Consultation</h2>
+        <p class="content-text" style="margin-bottom: 20px;">Share your project or career inquiry — our team will respond via email.</p>
+        <form id="corporateContactForm" class="inquiry-form">
+            <label for="about-name">Full name</label>
+            <input type="text" name="name" id="about-name" required autocomplete="name">
+            <label for="about-phone">Mobile number</label>
+            <input type="tel" name="phone" id="about-phone" required autocomplete="tel">
+            <label for="about-email">Email</label>
+            <input type="email" name="email" id="about-email" required autocomplete="email">
+            <label for="about-message">Your message</label>
+            <textarea name="message" id="about-message" rows="4" required placeholder="Project type, location, or collaboration interest…"></textarea>
+            <button type="submit" id="submitFormBtn">Submit Details</button>
+            <div id="submissionStatusDisplay" style="margin-top: 15px; padding: 12px; font-weight: bold; border-radius: 4px; display: none; text-align: center; font-family: sans-serif;"></div>
+        </form>
+    </div>
 </div>
 
-<!-- AI Floating Assistant -->
 <a href="ai-support.html" class="ai-btn" title="Launch AI Support Desk">🤖</a>
 
+<script type="text/javascript" src="js/corporate-emailjs.js"></script>
 </body>
 </html>

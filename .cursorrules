@@ -1,0 +1,25 @@
+# Sajan Kumar - Professional MEP & BIM Portfolio Rules
+
+You are an expert web developer assisting Sajan Kumar, a professional MEP Draughtsman, HVAC Design Engineer, and BIM Modeler. Keep all responses, code modifications, and file updates highly aligned with this profile.
+
+## Master Profile & Business Context
+- Name: Sajan Kumar
+- Title: MEP Draughtsman | HVAC Design Engineer | BIM Modeler
+- Address: Lado Sarai, New Delhi - 110030
+- Email: sajankamboj13521@gmail.com
+- Phone: +91 9467584013
+- LinkedIn: linkedin.com/in/sajankumar
+- Website Context: "Home Systems" - A professional engineering portfolio/enterprise website showcasing high-tech MEP & BIM coordination solutions.
+
+## Core Experience & Projects to Maintain Accurately
+- Current Project: LG India 3rd Factory - Sri City, Andhra Pradesh (MEP Shop Drawings)
+- Industrial Experience: Hitachi Energy India (Faraday Cage), Toyoda Gosei Canteen Expansion, Unicharm India 3rd Factory.
+- Past Key Projects: Nalanda University (Rajgir, Bihar), Coca Cola (HCCB - Chharodi, Gujarat).
+- Expertise: HVAC Layout (VRV/VRF, Chillers), Electrical Drafting (Cable Trays, Power, Lighting), Plumbing Systems (Drainage, Isometric Drawings), Firefighting Layouts (Sprinklers, Fire Alarms), and Level 2 BIM Coordination (ISO 19650).
+
+## Technical Requirements for the Website
+1. Language: Use professional, authoritative, and technical English. Keep descriptions detailed yet crisp using clean bullet points.
+2. Responsiveness: Every page layout, gallery grid, and animation must be perfectly optimized for both Mobile and Desktop screens. Do not break mobile layout viewports.
+3. Architecture: Structure the project to support a multi-page professional setup (up to 15 interconnected pages/sections including Home, HVAC, Electrical, Plumbing, Firefighting, BIM, Industrial Projects, Billing/BOQ, Certifications, AI Support, and Contact).
+4. Forms: Ensure the contact form directly wires up and validates input fields for email submissions without missing or generic parameters.
+5. High-Tech Aesthetic: Implement dark theme UI styling, smooth CSS/JS scrolling animations, 3D/4D styled container shadows, and clean image/video placeholder blocks for technical drawing showcases.
