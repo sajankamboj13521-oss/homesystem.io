@@ -2,6 +2,6 @@
  * @deprecated Use js/emailjs-corporate-config.js (EmailJS service_cgl3auw)
  */
 const LEAD_CONFIG = {
-    ownerEmail: 'sajankamboj13521@gmail.com',
+    ownerEmail: 'info@homesystems-io.com',
     siteName: 'homesystems.io',
 };

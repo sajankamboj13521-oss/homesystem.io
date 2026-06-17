@@ -1,8 +1,12 @@
 /**
- * Unified silent EmailJS submission — service_cgl3auw
+ * Unified silent EmailJS submission — reads from window.emailjsConfig
  * No mailto, no WhatsApp redirects.
  */
 (function () {
+    function getConfig() {
+        return window.emailjsConfig || {};
+    }
+
     function parseFormParams(form) {
         const name =
             form.querySelector('[name="name"]')?.value?.trim() ||
@@ -39,9 +43,13 @@
         const form = document.getElementById(formId);
         if (!form) return;
 
+        form.removeAttribute('action');
+        form.removeAttribute('method');
+
         form.addEventListener('submit', function (event) {
             event.preventDefault();
 
+            const cfg = getConfig();
             const submitBtn =
                 form.querySelector('#submitFormBtn') ||
                 form.querySelector('button[type="submit"]');
@@ -56,11 +64,7 @@
             const executionParams = parseFormParams(form);
 
             emailjs
-                .send(
-                    EMAILJS_CORPORATE.serviceId,
-                    EMAILJS_CORPORATE.templateId,
-                    executionParams
-                )
+                .send(cfg.serviceId, cfg.templateId, executionParams)
                 .then(function () {
                     if (submitBtn) {
                         submitBtn.innerText = 'Submit Details';
@@ -95,17 +99,20 @@
 
     /** AI chat & programmatic sends */
     function sendParams(executionParams) {
-        return emailjs.send(
-            EMAILJS_CORPORATE.serviceId,
-            EMAILJS_CORPORATE.templateId,
-            executionParams
-        );
+        const cfg = getConfig();
+        return emailjs.send(cfg.serviceId, cfg.templateId, executionParams);
     }
 
     window.CorporateEmailJs = { sendParams, parseFormParams };
 
     document.addEventListener('DOMContentLoaded', function () {
+        const cfg = getConfig();
+        if (cfg.publicKey && typeof emailjs !== 'undefined') {
+            emailjs.init(cfg.publicKey);
+        }
         bindCorporateForm('corporateContactForm');
         bindCorporateForm('corporateContactFormJv');
+        bindCorporateForm('materialForm');
+        bindCorporateForm('jvForm');
     });
 })();

@@ -1,6 +1,7 @@
-/** Corporate EmailJS — verified service (set public key + template in EmailJS dashboard) */
-const EMAILJS_CORPORATE = {
-    publicKey: 'YOUR_PUBLIC_KEY_HERE',
+const emailjsConfig = {
     serviceId: 'service_cgl3auw',
-    templateId: 'YOUR_TEMPLATE_ID_HERE',
+    templateId: 'YOUR_TEMPLATE_ID_HERE',   // I will replace this in dashboard later
+    publicKey: 'YOUR_PUBLIC_KEY_HERE'      // I will replace this in dashboard later
 };
+
+window.emailjsConfig = emailjsConfig;

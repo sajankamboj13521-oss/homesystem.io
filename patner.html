@@ -7,6 +7,14 @@
     <title>Partner &amp; Legal | homesystems.io</title>
     <link rel="stylesheet" href="css/forms.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
+    <script type="text/javascript">
+    (function(){
+        if (window.emailjsConfig && typeof emailjs !== 'undefined') {
+            emailjs.init(window.emailjsConfig.publicKey);
+        }
+    })();
+    </script>
 </head>
 <body class="form-page form-page--light">
 
@@ -27,51 +35,41 @@
 
     <div class="partner-grid">
         <article class="partner-card">
-            <div id="material-success" class="form-success" role="status">
-                <div class="tick" aria-hidden="true">✔</div>
-                <h2>Thank you!</h2>
-                <p id="material-success-msg">Your details have been submitted successfully.</p>
-            </div>
             <div id="material-wrap">
                 <h3>Material Supply</h3>
                 <p>For HVAC, electrical, and acoustic material vendors.</p>
                 <form id="materialForm" class="lead-form" novalidate>
-                    <p id="material-error" class="form-error" hidden role="alert"></p>
                     <label for="material-name">Full name</label>
-                    <input type="text" id="material-name" required autocomplete="name">
+                    <input type="text" id="material-name" name="name" required autocomplete="name">
                     <label for="material-phone">Mobile</label>
-                    <input type="tel" id="material-phone" required autocomplete="tel">
+                    <input type="tel" id="material-phone" name="phone" required autocomplete="tel">
                     <label for="material-email">Email</label>
-                    <input type="email" id="material-email" required autocomplete="email">
+                    <input type="email" id="material-email" name="email" required autocomplete="email">
                     <label for="material-message">Company &amp; proposal</label>
-                    <textarea id="material-message" rows="4" required placeholder="Company profile, products, certifications…"></textarea>
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
-                    <button type="submit" class="btn-submit" id="material-submit">Submit Inquiry</button>
+                    <textarea id="material-message" name="message" rows="4" required placeholder="Company profile, products, certifications…"></textarea>
+                    <input type="hidden" name="type" value="Material Supply">
+                    <button type="submit" class="btn-submit" id="material-submit">Submit Details</button>
+                    <div id="submissionStatusDisplay" style="display: none; margin-top: 15px;"></div>
                 </form>
             </div>
         </article>
 
         <article class="partner-card">
-            <div id="jv-success" class="form-success" role="status">
-                <div class="tick" aria-hidden="true">✔</div>
-                <h2>Thank you!</h2>
-                <p id="jv-success-msg">Your details have been submitted successfully.</p>
-            </div>
             <div id="jv-wrap">
                 <h3>Joint Ventures</h3>
                 <p>Project-based collaboration for MEP design and execution.</p>
                 <form id="jvForm" class="lead-form" novalidate>
-                    <p id="jv-error" class="form-error" hidden role="alert"></p>
                     <label for="jv-name">Full name</label>
-                    <input type="text" id="jv-name" required autocomplete="name">
+                    <input type="text" id="jv-name" name="name" required autocomplete="name">
                     <label for="jv-phone">Mobile</label>
-                    <input type="tel" id="jv-phone" required autocomplete="tel">
+                    <input type="tel" id="jv-phone" name="phone" required autocomplete="tel">
                     <label for="jv-email">Email</label>
-                    <input type="email" id="jv-email" required autocomplete="email">
+                    <input type="email" id="jv-email" name="email" required autocomplete="email">
                     <label for="jv-message">Partnership scope</label>
-                    <textarea id="jv-message" rows="4" required placeholder="Project type, region, capabilities…"></textarea>
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
-                    <button type="submit" class="btn-submit" id="jv-submit">Submit Inquiry</button>
+                    <textarea id="jv-message" name="message" rows="4" required placeholder="Project type, region, capabilities…"></textarea>
+                    <input type="hidden" name="type" value="Joint Venture">
+                    <button type="submit" class="btn-submit" id="jv-submit">Submit Details</button>
+                    <div id="submissionStatusDisplay" style="display: none; margin-top: 15px;"></div>
                 </form>
             </div>
         </article>
@@ -100,9 +98,6 @@
 
 <a href="ai-support.html" class="ai-fab" title="AI Support" aria-label="AI Support">🤖</a>
 
-<script src="js/lead-config.js"></script>
-<script src="js/lead-submit.js"></script>
-<script src="js/lead-form-utils.js"></script>
-<script src="js/partner-form.js"></script>
+<script type="text/javascript" src="js/corporate-emailjs.js"></script>
 </body>
 </html>

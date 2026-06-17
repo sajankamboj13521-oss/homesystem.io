@@ -10,7 +10,9 @@
     <script type="text/javascript" src="js/emailjs-corporate-config.js"></script>
     <script type="text/javascript">
     (function(){
-        emailjs.init(EMAILJS_CORPORATE.publicKey);
+        if (window.emailjsConfig && typeof emailjs !== 'undefined') {
+            emailjs.init(window.emailjsConfig.publicKey);
+        }
     })();
     </script>
 </head>
