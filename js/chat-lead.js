@@ -220,18 +220,16 @@
         const roleDetails = buildRoleDetailsText();
         const fullTranscript = buildTranscript();
         const executionParams = {
+            category: 'ai_support',
+            aiRole: roleId,
             name: lead.lead_name,
             email: lead.lead_email,
             phone: lead.lead_phone,
-            message: [
-                `Source: AI Support Desk`,
-                `Role: ${lead.role}`,
-                '',
-                roleDetails,
-                '',
-                '--- Chat transcript ---',
-                fullTranscript,
-            ].join('\n'),
+            role: lead.role,
+            roleDetails,
+            transcript: fullTranscript,
+            message: fullTranscript,
+            leadData: { ...lead },
         };
 
         try {

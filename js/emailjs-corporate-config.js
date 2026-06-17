@@ -1,7 +1,8 @@
 const emailjsConfig = {
-    serviceId: 'service_cgl3auw',
-    templateId: 'YOUR_TEMPLATE_ID_HERE',   // I will replace this in dashboard later
-    publicKey: 'YOUR_PUBLIC_KEY_HERE'      // I will replace this in dashboard later
+    serviceId: 'service_80rgrhv',
+    templateId: 'template_14vihik',
+    publicKey: '6Qx1pRsoYt2X5rez1',
+    adminEmail: 'info@homesystems-io.com',
 };
 
 window.emailjsConfig = emailjsConfig;

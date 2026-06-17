@@ -1,5 +1,5 @@
 /**
- * @deprecated Use js/emailjs-corporate-config.js (EmailJS service_cgl3auw)
+ * @deprecated Use js/emailjs-corporate-config.js (EmailJS service_80rgrhv)
  */
 const LEAD_CONFIG = {
     ownerEmail: 'info@homesystems-io.com',
